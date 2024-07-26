@@ -6,7 +6,8 @@ import { setJobDraft, clearJobDraft } from '../store/jobSlice';
 const JobModal = ({ isOpen, onClose }) => {
     const dispatch = useDispatch();
     const jobDraft = useSelector((state) => state.job.jobDraft);
-
+    
+    
     useEffect(() => {
         if (isOpen) {
             // Load draft data when modal opens

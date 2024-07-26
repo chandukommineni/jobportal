@@ -14,7 +14,7 @@ const dataSlice = createSlice({
   name: 'data',
   initialState: {
     data: [],
-    loading: 'false', 
+    loading: true, 
     error: null,
   },
   reducers: {
@@ -23,14 +23,14 @@ const dataSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchData.pending, (state) => {
-        state.loading = 'loading';
+        state.loading = true;
       })
       .addCase(fetchData.fulfilled, (state, action) => {
-        state.loading = 'succeeded';
+        state.loading = false;
         state.data = action.payload;
       })
       .addCase(fetchData.rejected, (state, action) => {
-        state.loading = 'failed';
+        state.loading = true;
         state.error = action.error.message;
       });
   },
