@@ -8,7 +8,7 @@ app.use(cors({
     origin:"*"
 }))
 
-app.get("/data",async (req,res)=>{
+app.get("/",async (req,res)=>{
     try{
         const data=await Jobs.find()
         console.log("fetch request received")
@@ -20,7 +20,7 @@ app.get("/data",async (req,res)=>{
     }
 })
 
-app.post("/data",async (req,res)=>{
+app.post("/",async (req,res)=>{
     try {
         const { company, companyLogo, timeAgo, title, experience, type, salary, description, additionalDescription, location } = req.body;
     
