@@ -43,7 +43,7 @@ const JobModal = ({ isOpen, onClose }) => {
         };
 
         try {
-            const response = await axios.post('http://localhost:5000/api/jobs', jobData, {
+            const response = await axios.post('https://jobportal-oz9g.vercel.app/', jobData, {
                 headers: {
                     'Content-Type': 'application/json'
                 }
