@@ -14,9 +14,8 @@ const Jobs = () => {
   
   const [values, setValues] = useState([50000, 80000]);
   
-  useEffect(() => {
 
-     },[]);
+  
 
   const handleFilterChange = (e) => {
     const { name, value } = e.target;

@@ -10,7 +10,7 @@ const JobModal = ({ isOpen, onClose }) => {
     
     useEffect(() => {
         if (isOpen) {
-            // Load draft data when modal opens
+            
             const savedDraft = JSON.parse(localStorage.getItem('jobDraft')) || {};
             dispatch(setJobDraft(savedDraft));
         }
@@ -22,7 +22,7 @@ const JobModal = ({ isOpen, onClose }) => {
     };
 
     const handleSaveDraft = () => {
-        // Save draft data to local storage
+        
         localStorage.setItem('jobDraft', JSON.stringify(jobDraft));
         console.log('Draft saved', jobDraft);
         onClose();
