@@ -1,13 +1,15 @@
 import React from 'react';
 import { FaUserPlus,FaLayerGroup,FaCity} from 'react-icons/fa';
 const JobCard = ({ job }) => {
+ 
   return (
     <div className="flex flex-col p-4 border rounded-lg shadow-md bg-white min-h-[360px] max-h-auto">
       <div className="flex justify-between items-center">
         <div className="flex items-center justify-center bg-[#fafafa] h-20 w-20 rounded-lg shadow-custom-all-sides">
           <div 
             className="h-11 w-11 rounded-full bg-center bg-no-repeat bg-contain"
-            style={{ backgroundImage: `url(${job.companyLogo})` }}
+            style={{ backgroundImage: `url(${job.companyLogo || '/default_company_logo.png'})` }}
+
           ></div>
         </div>
         <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded mt-[-50px]">{job.timeAgo}</span>

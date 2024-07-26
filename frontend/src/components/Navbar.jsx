@@ -1,11 +1,21 @@
 import React, { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import JobModal from './JobModal'; // Import the JobModal component
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false); // State for modal visibility
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
+    };
+
+    const openModal = () => {
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
     };
 
     return (
@@ -39,7 +49,11 @@ const Navbar = () => {
                         <a href="#" className="text-gray-900 md:px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-200">Testimonials</a>
                     </div>
                     <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:pr-0 justify-end " style={{width:"200px"}}>
-                        <button className="bg-purple-600 text-white px-4 py-2 rounded-md text-sm font-medium">Create Jobs</button>
+                        <button 
+                            onClick={openModal} // Open the modal on click
+                            className="bg-purple-600 text-white px-4 py-2 rounded-md text-sm font-medium">
+                            Create Jobs
+                        </button>
                     </div>
                 </div>
 
@@ -55,6 +69,7 @@ const Navbar = () => {
                     </div>
                 )}
             </nav>
+            <JobModal isOpen={isModalOpen} onClose={closeModal} /> {/* Include the JobModal component */}
         </div>
     );
 };
