@@ -10,7 +10,6 @@ const JobModal = ({ isOpen, onClose }) => {
     
     useEffect(() => {
         if (isOpen) {
-            
             const savedDraft = JSON.parse(localStorage.getItem('jobDraft')) || {};
             dispatch(setJobDraft(savedDraft));
         }
