@@ -2,7 +2,8 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
 import { setJobDraft, clearJobDraft } from '../store/jobSlice';
-
+import {fetchData} from "../store/dataSlice"
+import { toast } from 'react-toastify';
 const JobModal = ({ isOpen, onClose }) => {
     const dispatch = useDispatch();
     const jobDraft = useSelector((state) => state.job.jobDraft);
@@ -50,9 +51,12 @@ const JobModal = ({ isOpen, onClose }) => {
             console.log('Job posted successfully:', response.data);
             localStorage.removeItem('jobDraft'); 
             dispatch(clearJobDraft()); 
+            toast.success("Job Posted successfully")
+            dispatch(fetchData())
             onClose();
         } catch (error) {
             console.error('Error posting job:', error);
+            toast.error("Failed to post the Job")
         }
     };
 

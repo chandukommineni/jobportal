@@ -4,6 +4,8 @@ import Jobs from "./components/Jobs";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import {fetchData} from "./store/dataSlice"
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const App = () => {
   const dispatch=useDispatch()
   useEffect(()=>{
@@ -11,6 +13,7 @@ const App = () => {
   },[])
   return (
     <>
+    <ToastContainer position="top-center" />
     <Navbar/>
     <Jobs/>
 

@@ -76,7 +76,7 @@ const Jobs = () => {
             </select>
           </div>
           <div className="flex flex-col md:flex-col items-start md:items-center space-y-4 md:space-y-0 w-full md:w-1/4">
-            <div className="font-semibold flex justify-evenly w-full mb-4 text-[0.9rem]">
+            <div className="font-semibold flex justify-evenly w-full mb-4 text-[0.9rem] md:ml-2">
               <span className="w-auto">Salary Per Annum</span>
               <span className="w-auto">₹{values[0].toLocaleString()} - ₹{values[1].toLocaleString()}</span>
             </div>
